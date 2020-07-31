@@ -1,0 +1,10 @@
+architecture: amd64
+
+actions:
+  - action: debootstrap
+    suite: buster
+    variant: minbase
+
+  - action: pack
+    file: result.tar.gz
+    compression: gz

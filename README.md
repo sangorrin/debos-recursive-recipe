@@ -1,18 +1,12 @@
-This example shows how the image is not exported to the artifactdir
+This example checks that recursive recipes are correctly verified
 
+Without recursion
 ```
-$ ./debos.sh -t tarball:false example.yml
-$ ls artifacts/
-   nothing
-$ ls
-  results.img
+$ ./debos.sh example.yaml
 ```
 
-If we use a pack action the compressed file is exported to the artifactdir
-
+With recursion
 ```
-$ ./debos.sh -t tarball:true example.yml
-$ ls artifacts/
-  results.tar.gz
+./debos.sh --print-recipe -t base:"example.yaml" example.yaml
 ```
 

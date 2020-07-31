@@ -1,0 +1,10 @@
+{{- $base := or .base "base.yaml" -}}
+
+architecture: amd64
+
+actions:
+  - action: recipe
+    description: Using {{ $base }} as base image
+    recipe: {{ $base }}
+    variables:
+      base: {{ $base }}
